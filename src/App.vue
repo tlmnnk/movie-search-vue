@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PosterBG :poster="posterBg"/>
+    <MoviesList :list="moviesList" @changePoster="onChangePoster"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { mapActions, mapGetters } from 'vuex';
+import MoviesList from './components/moviesList.vue';
+import PosterBG from './components/PosterBG.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    MoviesList,
+    PosterBG,
+  },
+  data: () => ({
+    posterBg: '',
+  }),
+  methods: {
+    ...mapActions('movies', ['fetchMovies']),
+    onChangePoster(poster) {
+      this.posterBg = poster;
+    },
+  },
+  computed: {
+    ...mapGetters('movies', ['moviesList']),
   },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
