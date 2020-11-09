@@ -4,8 +4,8 @@
     v-model="currentPageModel"
     :per-page="perPage"
     :total-rows="total"
-    :prev-text="Prev"
-    :next-text="Next"
+    prev-text="Prev"
+    next-text="Next"
     />
     {{ currentPage }}
 </div>

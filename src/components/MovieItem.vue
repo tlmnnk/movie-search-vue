@@ -1,7 +1,7 @@
 <template>
   <div class="movie-item mb-3">
     <div class="movie-item-poster" :style="posterBG"></div>
-    <div class="movie-item-wrap d-flex flex-column justify-content-between">
+    <div class="movie-info-wrap d-flex flex-column justify-content-between">
       <div class="movie-item-info">
         <h3 class="movie-title">{{ movie.Title }}</h3>
         <span class="movie-year">{{ movie.Year }}</span>
