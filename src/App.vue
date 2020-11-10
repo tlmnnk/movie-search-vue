@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Loader />
+    <Notification />
     <PosterBG :poster="posterBg"/>
     <Header />
     <MoviesList :list="moviesList" @changePoster="onChangePoster"/>
@@ -20,6 +21,7 @@ import PosterBG from './components/PosterBG.vue';
 import MoviesPagintaion from './components/MoviesPagination.vue';
 import Loader from './components/Loader.vue';
 import Header from './components/Header.vue';
+import Notification from './components/Notification.vue';
 
 
 export default {
@@ -29,7 +31,8 @@ export default {
     PosterBG,
     MoviesPagintaion,
     Loader,
-    Header
+    Header,
+    Notification,
   },
   data: () => ({
     posterBg: '',
