@@ -11,7 +11,7 @@ export default {
     ...mapGetters(['messagePool']),
   },
   watch: {
-    messagePool: 'showNotification'
+    messagePool: 'showNotification',
   },
   methods: {
     showNotification({ variant, msg, title }) {

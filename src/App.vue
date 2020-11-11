@@ -23,7 +23,6 @@ import Loader from './components/Loader.vue';
 import Header from './components/Header.vue';
 import Notification from './components/Notification.vue';
 
-
 export default {
   name: 'App',
   components: {
